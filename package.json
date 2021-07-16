@@ -1,0 +1,41 @@
+{
+  "name": "mathjax-vue",
+  "version": "0.0.1",
+  "description": "Vue components for MathJax",
+  "main": "dist/math.umd.js",
+  "module": "dist/math.esm.js",
+  "unpkg": "dist/math.min.js",
+  "repository": "https://github.com/hansonGong/mathjax-vue.git",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && npm run lint && npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config rollup.config.js --format umd --file dist/math.umd.js",
+    "build:es": "rollup --config rollup.config.js --format es --file dist/math.esm.js",
+    "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/math.min.js",
+    "lint": "prettier --write src/**/*{.js,.vue}"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.1.4",
+    "prettier": "2.2.1",
+    "rollup": "2.45.2",
+    "rollup-plugin-babel": "4.4.0",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-eslint": "7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "author": "hanson",
+  "license": "ISC",
+  "keywords": [
+    "mathjax",
+    "mathjax3",
+    "latex",
+    "vue"
+  ]
+}
