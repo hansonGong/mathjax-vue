@@ -6,14 +6,12 @@ import buble from 'rollup-plugin-buble'
 import { terser } from 'rollup-plugin-terser'
 import packageJSON from './package.json'
 
-const extensions = ['.js', '.vue']
-
 // 基础配置
 const commonConf = {
   input: './src/index.js',
   external: ['vue'],
   plugins: [
-    resolve(extensions),
+    resolve(['.js', '.vue']),
     vue(),
     babel({
       exclude: '**/node_modules/**',
