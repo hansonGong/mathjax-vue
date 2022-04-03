@@ -1,12 +1,22 @@
-import resolve from 'rollup-plugin-node-resolve' // 依赖引用插件
+import resolve from 'rollup-plugin-node-resolve'
 import vue from 'rollup-plugin-vue'
-import commonjs from 'rollup-plugin-commonjs' // commonjs模块转换插件
+import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import buble from 'rollup-plugin-buble'
 import { terser } from 'rollup-plugin-terser'
+import filesize from 'rollup-plugin-filesize'
+import replace from 'rollup-plugin-replace'
 import packageJSON from './package.json'
 
-// 基础配置
+const argv = process.argv.splice(2)
+const formatType = argv[3]
+
+const FORMAT_MAP = {
+  es: 'es',
+  umd: 'umd',
+  iife: 'min',
+}
+
 const commonConf = {
   input: './src/index.js',
   external: ['vue'],
@@ -19,21 +29,15 @@ const commonConf = {
     commonjs(),
     buble(),
     terser(),
+    filesize(),
+    replace({
+      __buildVersion: JSON.stringify(packageJSON.version),
+    }),
   ],
   output: [
     {
-      file: packageJSON.main,
-      format: 'umd',
-      name: 'mathJaxVue',
-    },
-    {
-      file: packageJSON.module,
-      format: 'es',
-      name: 'mathJaxVue',
-    },
-    {
-      file: packageJSON.browser,
-      format: 'iife',
+      file: `./lib/index.${FORMAT_MAP[formatType]}.js`,
+      format: formatType,
       name: 'mathJaxVue',
     },
   ],

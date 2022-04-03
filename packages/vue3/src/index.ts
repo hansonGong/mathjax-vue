@@ -1,14 +1,20 @@
-import { initMathJax, renderByMathjax } from './utils'
-import MathJax from './components/MathJax.vue'
-import version from './version'
+import { DefineComponent } from 'vue'
 
-function install (Vue) {
+export * from '@mathjax/core'
+
+import MathJax from './components/MathJax.vue'
+
+export {
+  MathJax
+}
+
+function install(Vue: DefineComponent): void {
   Vue.component('MathJax', MathJax)
 }
 
 // Plugin
 const plugin = {
-  version,
+  version: __buildVersion,
   install
 }
 
@@ -18,9 +24,3 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default plugin
-
-export {
-  MathJax,
-  initMathJax,
-  renderByMathjax
-}

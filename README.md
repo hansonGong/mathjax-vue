@@ -66,14 +66,19 @@ Component
 </template>
 ```
 
-Functional
+API
 ```
 import { initMathJax, renderByMathjax } from 'mathjax-vue'
 
 initMathJax({})
 
+// The default mathJax CDN link is https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.0/es5/tex-svg.min.js
+// If you don't want to use it or can't access it, you can replace it in the following ways
+
+initMathJax({ url: 'Link of mathJax' })
+
 // After the completion of the MathJax load can success
-renderByMathjax()
+renderByMathjax(el)
 
 ```
 
@@ -87,7 +92,17 @@ renderByMathjax()
 ## Online demo
 https://codesandbox.io/s/funny-silence-cgzn5
 
-## note
-The default package version for Vue2, if you want Vue3.
-1. Update the rollup-plugin-vue version to 6.
-2. Delete the node_modules and reinstall.
+## Note
+The project uses PNPM as a package management tool.
+If you want to try the project locally, you can follow these steps:
+
+```
+// Make sure your node version is above 16
+
+npm install -g pnpm
+
+cd xx/mathjax-vue
+
+pnpm i/pnpm install
+
+```

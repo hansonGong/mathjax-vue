@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"outDir": "./lib",
+		"paths": {
+			"tslib": ["node_modules/tslib/tslib.d.ts"]
+		},
+		"sourceMap": false,
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"allowJs": false,
+		"strict": true,
+		"noUnusedLocals": true,
+		"experimentalDecorators": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"removeComments": false,
+		"declaration": true,
+		"declarationMap": false,
+		"declarationDir": "lib",
+		"lib": ["esnext", "dom"],
+		"types": ["node"]
+	},
+}

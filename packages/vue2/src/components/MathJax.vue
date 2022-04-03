@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { renderByMathjax } from '../utils'
+import { renderByMathjax } from '@mathjax/core'
 
 export default {
   name: 'MathJax',
@@ -30,7 +30,7 @@ export default {
       this.$el.innerText = this.block
         ? `$$ ${this.latex} $$`
         : `$ ${this.latex} $`
-      renderByMathjax(this.$el)
+      renderByMathjax(this.$el).catch((err) => console.warn(err))
     },
   },
 }

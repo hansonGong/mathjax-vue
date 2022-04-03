@@ -1,0 +1,31 @@
+{
+  "name": "mathjax-vue",
+  "version": "1.0.0",
+  "description": "Vue components for MathJax",
+  "main": "lib/index.umd.js",
+  "module": "lib/index.es.js",
+  "unpkg": "lib/index.min.js",
+  "files": [
+    "lib/*"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && pnpm build:umd & pnpm build:es & pnpm build:unpkg",
+    "build:umd": "rollup --config rollup.config.js --format umd",
+    "build:es": "rollup --config rollup.config.js --format es",
+    "build:unpkg": "rollup --config rollup.config.js --format iife"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.0"
+  },
+  "devDependencies": {
+    "vue": "^2.6.10"
+  },
+  "author": "hanson",
+  "license": "ISC",
+  "keywords": [
+    "mathjax",
+    "mathjax3",
+    "latex",
+    "vue"
+  ]
+}
