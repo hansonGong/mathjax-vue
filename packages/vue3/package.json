@@ -1,0 +1,28 @@
+{
+  "name": "mathjax-vue3",
+  "version": "1.0.0",
+  "description": "Vue components for MathJax",
+  "main": "lib/index.umd.js",
+  "module": "lib/index.es.js",
+  "files": [
+    "lib/*"
+  ],
+  "types": "lib/src/index.d.ts",
+  "scripts": {
+    "build": "rm -rf lib && vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "vue": "^3.2.16"
+  },
+  "author": "hanson",
+  "license": "ISC",
+  "keywords": [
+    "mathjax",
+    "mathjax3",
+    "latex",
+    "vue"
+  ]
+}

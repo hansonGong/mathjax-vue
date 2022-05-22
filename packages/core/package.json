@@ -1,0 +1,12 @@
+{
+  "name": "@mathjax/core",
+  "version": "1.0.0",
+  "description": "Core code",
+  "main": "lib/index.min.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "rm -rf lib && rollup --config rollup.config.js --format es"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -3,7 +3,6 @@ Vue components for MathJax
 
 ## Installation
 
-Vue2
 ```
 // npm
 npm i --save mathjax-vue
@@ -11,15 +10,6 @@ npm i --save mathjax-vue
 // yarn
 yarn add mathjax-vue
 
-```
-
-Vue3
-```
-// vue 3
-npm i --save mathjax-vue3
-
-// yarn
-yarn add mathjax-vue3
 ```
 
 ## Usage
@@ -38,11 +28,8 @@ function onMathJaxReady() {
 
 initMathJax({}, onMathJaxReady)
 
-// vue 2
 Vue.use(MathJax)
 
-// vue3
-createApp(App).use(MathJax)
 ```
 
 OR
@@ -90,12 +77,7 @@ renderByMathjax(el)
 |  block  | Boolean | Css display is block | false |
 
 ## Online demo
-
-// vue2
 https://codesandbox.io/s/funny-silence-cgzn5
-
-// vue 3
-https://codesandbox.io/s/festive-morning-ywy8up
 
 
 ## Note

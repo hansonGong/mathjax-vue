@@ -3,19 +3,8 @@ Vue components for MathJax
 
 ## Installation
 
-Vue2
 ```
 // npm
-npm i --save mathjax-vue
-
-// yarn
-yarn add mathjax-vue
-
-```
-
-Vue3
-```
-// vue 3
 npm i --save mathjax-vue3
 
 // yarn
@@ -24,7 +13,7 @@ yarn add mathjax-vue3
 
 ## Usage
 ```
-import MathJax, { initMathJax, renderByMathjax } from 'mathjax-vue'
+import MathJax, { initMathJax, renderByMathjax } from 'mathjax-vue3'
 
 // Rewrite pageReady method, optimizing MathJax as required rendering and render to avoid them
 // ❗️❗️ For example '<span>$$Not a formula$$</span>' is not going to render, but in fact will be rendered into formula， As below is not the el
@@ -38,16 +27,12 @@ function onMathJaxReady() {
 
 initMathJax({}, onMathJaxReady)
 
-// vue 2
-Vue.use(MathJax)
-
-// vue3
 createApp(App).use(MathJax)
 ```
 
 OR
 ```
-import { MathJax } from 'mathjax-vue'
+import { MathJax } from 'mathjax-vue3'
 export default {
   ...
   components: {
@@ -68,7 +53,7 @@ Component
 
 API
 ```
-import { initMathJax, renderByMathjax } from 'mathjax-vue'
+import { initMathJax, renderByMathjax } from 'mathjax-vue3'
 
 initMathJax({})
 
@@ -90,11 +75,6 @@ renderByMathjax(el)
 |  block  | Boolean | Css display is block | false |
 
 ## Online demo
-
-// vue2
-https://codesandbox.io/s/funny-silence-cgzn5
-
-// vue 3
 https://codesandbox.io/s/festive-morning-ywy8up
 
 
